@@ -6,6 +6,7 @@ function Categories() {
   // console.log(cname)
   return (
     <div>
+      <h1>{cname}</h1>
       <Card categories={cname}/>
       
     </div>

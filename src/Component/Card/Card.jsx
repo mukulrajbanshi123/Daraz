@@ -23,7 +23,7 @@ function Card(props) {
         // <div className="col-lg-3 col-md-4 col-sm-6">
      <div className="card col-lg-3 col-md-4 col-sm-6 m-2" style={{width: '18rem'}}>
       <Link to={`/product/${x.id}`}>
-  <img src={x.image} className="card-img-top " alt="..." /></Link>
+  <img onClick={window.scrollTo(0,0)} src={x.image} className="card-img-top " alt="..." /></Link>
   <div className="card-body">
     <h5 className="card-title ">{x.title.substring(0,40)}...</h5>
     <span><p className="card-text d-flex price">Rs.{x.price}</p></span>

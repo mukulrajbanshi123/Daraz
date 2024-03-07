@@ -1,12 +1,12 @@
 import React from 'react'
-
+import "./breadcrum.scss"
 function Breadcrum(props) {
     let {product}=props;
     // console.log(product);
   return (
-    <div>
+    <div className='breadcrum'>
        
-       <p> Home &#47;Categories&#47; {}</p>
+        Home &#47; Categories&#47;{product.category}&#47;{product.title}
         
     </div>
   )
