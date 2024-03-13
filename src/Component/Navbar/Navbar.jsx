@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./navbar.scss"
 import { Link } from 'react-router-dom';
+import {  useSelector } from 'react-redux';
 function Navbar() {
   const [cat,setcat]=useState([""]);
   useEffect(()=>{
@@ -9,6 +10,7 @@ function Navbar() {
     .then(cat=>setcat(cat))
   },[])
   // console.log(cat);
+  const cartItems = useSelector(state => state.cart.cart);
   return (
     <div className='navbar'>
        <div className='nav-logo'>
@@ -36,7 +38,7 @@ function Navbar() {
         </Link>
        </div>
        <div className="cart"><Link to={"/cart"}><i class="fa-solid fa-cart-shopping"></i>
-       <div className="cart-count">0</div></Link>
+       <div className="cart-count">{cartItems.length}</div></Link>
               </div>
     </div>
   )

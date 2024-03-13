@@ -1,10 +1,12 @@
 import React, { useContext } from 'react'
 import "./productdetail.scss"
-import { ShopContext } from '../../Context/Context';
+import { useDispatch } from 'react-redux';
+import { addtocart } from '../../Redux/CartSlice';
 function Productdetail(props) {
     const {product}=props;
 //  const addCartItems=useContext(ShopContext);
     // console.log(product);
+    const dispatch= useDispatch();
   return (
     <div className='product-display container-fluid'>
         <div className="row">
@@ -37,7 +39,7 @@ function Productdetail(props) {
                 <div className="description">
                     {product.description}
                 </div>
-             <button className='btn btn-danger my-3 px-3'>ADD TO CART</button>
+             <button className='btn btn-danger my-3 px-3'onClick={()=>dispatch(addtocart({id:product.id,price:product.price,title:product.title,image:product.image}))} >ADD TO CART</button>
              <p className="category"><span>Category :</span>{product.category}</p>
              <p className="category"><span>Tags :</span>Morden, Latest</p>
             </div>

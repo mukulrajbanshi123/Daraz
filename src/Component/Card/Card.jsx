@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import "./card.scss"
 import { useParams,Link } from 'react-router-dom'
-import { ShopContext } from '../../Context/Context';
-
+import { useDispatch } from 'react-redux';
+import { addtocart } from '../../Redux/CartSlice';
 
 function Card(props) {
     // const addCartItems=useContext(ShopContext);
@@ -13,7 +13,7 @@ function Card(props) {
         .then(json=>setdata(json))
     },[])
    let cat = data.filter((x) => x.category == props.categories)
-
+   const dispatch= useDispatch()
   //  console.log(cat)
   return (
     <>
@@ -25,13 +25,13 @@ function Card(props) {
         // <div className="col-lg-3 col-md-4 col-sm-6">
      <div className="card col-lg-3 col-md-4 col-sm-6 m-2" style={{width: '18rem'}}>
       <Link to={`/product/${x.id}`}>
-  <img onClick={window.scrollTo(0,0)} src={x.image} className="card-img-top " alt="..." /></Link>
+  <img src={x.image} className="card-img-top " alt="..."/></Link>
   <div className="card-body">
     <h5 className="card-title ">{x.title.substring(0,40)}...</h5>
     <span><p className="card-text d-flex price">Rs.{x.price}</p></span>
     <p className='card-text d-flex rating '><span>Rating:{x.rating.rate}</span> <span className='ms-auto'>{x.rating.count}</span></p>
    
-    <a href="#" className="btn btn-primary mx-2 " >Add to Cart</a>
+    <div className="btn btn-primary mx-2 " onClick={()=>dispatch(addtocart({id:x.id,price:x.price,title:x.title,image:x.image}))} >Add to Cart</div>
   </div>
   
    </div>
