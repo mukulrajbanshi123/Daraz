@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./productdetail.scss"
+import { ShopContext } from '../../Context/Context';
 function Productdetail(props) {
     const {product}=props;
-    console.log(product);
+//  const addCartItems=useContext(ShopContext);
+    // console.log(product);
   return (
     <div className='product-display container-fluid'>
         <div className="row">

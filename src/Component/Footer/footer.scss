@@ -1,0 +1,30 @@
+.footer{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #F85606;
+    margin-top: 50px;
+    .logo{
+        margin-top: 10px;
+        img{
+            width: 160px;
+        }
+    }
+    .list{
+        margin: 20px 0;
+    ul{
+        list-style: none;
+        display: flex;
+        gap: 40px;
+    }
+}
+.icon{
+     display: flex;
+     flex-wrap: wrap;
+     gap: 40px;
+     margin: 20px 0;
+}
+p{
+    padding: 5px;
+}
+}

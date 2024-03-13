@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./card.scss"
 import { useParams,Link } from 'react-router-dom'
+import { ShopContext } from '../../Context/Context';
 
 
 function Card(props) {
-    
+    // const addCartItems=useContext(ShopContext);
     const [data,setdata]=useState([""]);
     useEffect(()=>{
         fetch('https://fakestoreapi.com/products')
@@ -12,6 +13,7 @@ function Card(props) {
         .then(json=>setdata(json))
     },[])
    let cat = data.filter((x) => x.category == props.categories)
+
   //  console.log(cat)
   return (
     <>
@@ -29,7 +31,7 @@ function Card(props) {
     <span><p className="card-text d-flex price">Rs.{x.price}</p></span>
     <p className='card-text d-flex rating '><span>Rating:{x.rating.rate}</span> <span className='ms-auto'>{x.rating.count}</span></p>
    
-    <a href="#" className="btn btn-primary mx-2 ">Add to Cart</a>
+    <a href="#" className="btn btn-primary mx-2 " >Add to Cart</a>
   </div>
   
    </div>

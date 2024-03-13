@@ -1,16 +1,17 @@
 .newsletter{
-    width: 100%;
+    // width: 90%;
     height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     // margin: auto;
-    margin-top: 50px;
+    margin: 50px 40px 30px 40px ;
     padding: 50px  120px 50px 120px;
     // margin-bottom: 100px;
     background-image: linear-gradient( #F85606, white);
     gap:30px;
+    border-radius: 20px;
 
     h1{
         padding-top: 20px;

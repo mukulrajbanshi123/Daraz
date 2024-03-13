@@ -6,6 +6,7 @@ import Product from './Pages/Product'
 import LoginSignup from './Pages/LoginSignup'
 import Cart from './Pages/Cart'
 import Home from './Pages/Home'
+import Footer from './Component/Footer/Footer'
 // import Product from './Pages/Product'
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <Route path='/loginsignup' element={<LoginSignup/>}/>
       <Route path='/cart' element={<Cart/>}/>
       </Routes>
-   
+       <Footer/>
       </BrowserRouter>
     </div>
   )

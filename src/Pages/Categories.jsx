@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../Component/Card/Card'
 import { useParams } from 'react-router-dom';
+import "./Scss/categories.scss"
 function Categories() {
   const {cname}=useParams();
   // console.log(cname)
